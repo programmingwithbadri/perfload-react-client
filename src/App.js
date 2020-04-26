@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import socket from './utilities/socketConnection';
+import socket from './util/socketConnection';
 import Widget from './Widget';
 
 class App extends Component {
@@ -33,6 +32,17 @@ class App extends Component {
 
   render() {
     console.log(this.state.performanceData);
+    let widgets = [];
+    const data = this.state.performanceData;
+    // grab each machine, by property, from data
+    Object.entries(data).forEach(([key,value])=>{
+      widgets.push(<Widget key={key} data={value} />)
+    })
+    return (
+      <div className="App">
+        {widgets}
+      </div>
+    );
   }
 }
 
