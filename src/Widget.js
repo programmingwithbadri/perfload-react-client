@@ -11,13 +11,13 @@ class Widget extends Component{
     }
 
     render(){
-        const { freeMem,totalMem,usedMem,memUseage,osType,upTime,cpuModel,numCores,cpuSpeed,cpuLoad, macA, isActive } = this.props.data;
+        const { freeMem,totalMem,usedMem,memUsage,osType,upTime,cpuModel,numCores,cpuSpeed,cpuLoad, macA, isActive } = this.props.data;
 
         const cpuWidgetId = `cpu-widget-${macA}`;
         const memWidgetId = `mem-widget-${macA}`;
 
         const cpu = {cpuLoad, cpuWidgetId}
-        const mem = {totalMem, usedMem, memUseage,freeMem, memWidgetId}
+        const mem = {totalMem, usedMem, memUsage,freeMem, memWidgetId}
         const info = {macA,osType,upTime,cpuModel,numCores,cpuSpeed}
 
         let notActiveDiv = '';

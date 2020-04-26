@@ -4,10 +4,10 @@ import drawCircle from './util/canvasLoadAnimation';
 function Mem(props){
 
     console.log(props);
-    const {totalMem, usedMem, memUseage,freeMem} = props.memData;
+    const {totalMem, usedMem, memUsage,freeMem} = props.memData;
     const canvas = document.querySelector(`.${props.memData.memWidgetId}`);
-    drawCircle(canvas,memUseage*100);
-    console.log(memUseage)
+    drawCircle(canvas,memUsage*100);
+    console.log(memUsage)
     const totalMemInGB = (totalMem/1073741824*100)/100;
     const freeMemInGB = Math.floor(freeMem/1073741824*100)/100;
     return(
@@ -16,7 +16,7 @@ function Mem(props){
             <div className="canvas-wrapper">
                 <canvas className={props.memData.memWidgetId} width="200" height="200"></canvas>
                 <div className="mem-text">
-                    {memUseage*100}%
+                    {memUsage*100}%
                 </div>
             </div>
             <div>
